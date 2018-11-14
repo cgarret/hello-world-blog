@@ -1,6 +1,10 @@
+require("dotenv").config();
+const config = require("./content/meta/config");
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: config.headerTitle,
+    subtitle: config.headerSubTitle
   },
   plugins: [
     'gatsby-plugin-react-helmet',
