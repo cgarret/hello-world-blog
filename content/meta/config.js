@@ -6,6 +6,14 @@ module.exports = {
   headerTitle: "C. Garret",
   headerSubTitle: "presents another one Gatsby Blog demo",
 
+  /* manifest.json */
+  manifestName: "BulmaBlog - a GatsbyJS starter",
+  manifestShortName: "BulmaBlog", // max 12 characters
+  manifestStartUrl: "/index.html",
+  manifestBackgroundColor: "white",
+  manifestThemeColor: "#666",
+  manifestDisplay: "standalone",
+
   // gravatar
   // Use your Gravatar image. If empty then will use src/images/jpg/avatar.jpg
   // Replace your email adress with md5-code.
