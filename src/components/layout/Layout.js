@@ -7,7 +7,21 @@ import '../all.scss'
 import Header from '../header'
 import Footer from '../footer'
 
-const Layout = ({ children }) => (
+
+
+
+class Layout extends React.Component{
+  constructor(){
+    super();
+
+    this.state = {
+      font400loaded: false,
+      font600loaded: false
+    }
+  };
+
+  render(){
+    return(
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -18,7 +32,10 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={data =>{
+      const { children } = this.props;
+      
+      return (      
       <>
         <Helmet
           title={data.site.siteMetadata.title}
@@ -35,12 +52,13 @@ const Layout = ({ children }) => (
         <div className="site-content">{children}</div>
         <Footer />
       </>
-    )}
+    )}}
   />
 )
+        }}
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+        Layout.propTypes = {
+          children: PropTypes.node.isRequired,
+        }
 
 export default Layout
